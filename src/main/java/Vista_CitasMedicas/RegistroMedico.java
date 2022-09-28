@@ -9,6 +9,7 @@ package Vista_CitasMedicas;
  * @author juanm
  */
 public class RegistroMedico extends javax.swing.JInternalFrame {
+ 
 
     private Controlador_CitasMedicas.ControlMedicos medicocontrolador;
     public RegistroMedico() {
@@ -19,6 +20,8 @@ public class RegistroMedico extends javax.swing.JInternalFrame {
         
         GrupoBotonesM.add(rdb_masculinoM);
         GrupoBotonesM.add(rdb_femeninoM);
+        
+        
     }
     
 
@@ -99,6 +102,20 @@ public class RegistroMedico extends javax.swing.JInternalFrame {
         CerrarM.setBackground(new java.awt.Color(14, 242, 242));
         CerrarM.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         CerrarM.setText("Cerrar");
+        CerrarM.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                CerrarMAncestorRemoved(evt);
+            }
+        });
+        CerrarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerrarMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,6 +209,15 @@ public class RegistroMedico extends javax.swing.JInternalFrame {
     private void RegistrarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegistrarMActionPerformed
+
+    private void CerrarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarMActionPerformed
+        
+        
+    }//GEN-LAST:event_CerrarMActionPerformed
+
+    private void CerrarMAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_CerrarMAncestorRemoved
+
+    }//GEN-LAST:event_CerrarMAncestorRemoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

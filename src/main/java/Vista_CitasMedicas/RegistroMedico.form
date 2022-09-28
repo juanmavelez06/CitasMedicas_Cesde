@@ -294,6 +294,10 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="ancestorRemoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="CerrarMAncestorRemoved"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CerrarMActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

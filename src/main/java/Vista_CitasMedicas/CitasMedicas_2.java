@@ -13,18 +13,43 @@ import java.awt.Color;
 public class CitasMedicas_2 extends javax.swing.JFrame {
     
     
+    Registro RegistroInternalframe;
+    ConsultarPaciente ConsultarPacienteInternalframe;
+    
+    RegistroMedico Registromedico;
+    ConsultaMedico Consultarmedico;
+    
+    Solicitar_Cita solicitarcitas;
+    Consultar_Citas consultarcitas;
 
 
     /**
      * Creates new form CitasMedicas_2
      */
     public CitasMedicas_2() {
+        
+        RegistroInternalframe = new  Registro();
+        ConsultarPacienteInternalframe = new ConsultarPaciente();
+        
+        Registromedico = new  RegistroMedico();
+        Consultarmedico = new ConsultaMedico();
+        
+        solicitarcitas = new   Solicitar_Cita();
+        consultarcitas = new  Consultar_Citas();
+        
+        add(RegistroInternalframe);
+        add( ConsultarPacienteInternalframe);
+        add(Registromedico );
+        add( Consultarmedico);
+        add(solicitarcitas );
+        add (consultarcitas);
+        setExtendedState(MAXIMIZED_BOTH);
+        
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
         
-      
-               
+        
         Text1.setText("<html>Citas medicas_Cesde Incompleto</html>");
         Text2.setText("<html>Citas medicas_Cesde Incompleto</html>");
         Text3.setText("<html>Citas medicas_Cesde Incompleto</html>");
@@ -86,18 +111,24 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
         Text2 = new javax.swing.JLabel();
         Text3 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion de Citas");
@@ -496,65 +527,125 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(204, 255, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jInternalFrame1.setBorder(null);
-        jInternalFrame1.setTitle("Registro de Usuarios");
-        jInternalFrame1.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jInternalFrame1.setName("JFrame2"); // NOI18N
-        jInternalFrame1.setVisible(true);
-        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel30.setIcon(new javax.swing.ImageIcon("C:\\Users\\juanm\\OneDrive\\Imágenes\\Saved Pictures\\Icons\\programador.png")); // NOI18N
+        jPanel10.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jMenu1.setText("Archivos");
-        jMenu1.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\juanm\\OneDrive\\Imágenes\\Saved Pictures\\Icons\\doctor.png")); // NOI18N
+        jPanel10.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
 
-        jMenu2.setText("Usuarios");
-        jMenu2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jLabel37.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel37.setText("Consultar Paciente ");
+        jPanel10.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 250, 30));
 
-        jMenuItem1.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jMenuItem1.setText("Registro de Pacientes");
-        jMenu2.add(jMenuItem1);
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel38.setText("Registrar Paciente ");
+        jPanel10.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 250, 30));
 
-        jMenuItem2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jMenuItem2.setText("Registro de Medico ");
-        jMenu2.add(jMenuItem2);
+        jLabel39.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel39.setText("Registrar Medico");
+        jPanel10.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 250, 30));
 
-        jMenuItem3.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jMenuItem3.setText("Consulta de Paciente ");
-        jMenu2.add(jMenuItem3);
+        jLabel40.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel40.setText("Consultar Medico");
+        jPanel10.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 250, 30));
 
-        jMenuItem4.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jMenuItem4.setText("Consulta de Medico");
-        jMenu2.add(jMenuItem4);
+        jButton1.setBackground(new java.awt.Color(204, 3, 189));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Consultar");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 80, 90, 30));
 
-        jMenuBar1.add(jMenu2);
+        jButton2.setBackground(new java.awt.Color(204, 3, 189));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Registrar");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, 30));
 
-        jInternalFrame1.setJMenuBar(jMenuBar1);
+        jButton3.setBackground(new java.awt.Color(204, 3, 189));
+        jButton3.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Consultar");
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 90, 30));
 
-        jPanel10.add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1030, 550));
+        jButton4.setBackground(new java.awt.Color(204, 3, 189));
+        jButton4.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Registrar");
+        jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 90, 30));
 
         tab1.addTab("tab2", jPanel10);
 
         jPanel11.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel31.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("Solicitar Cita");
+        jLabel36.setIcon(new javax.swing.ImageIcon("C:\\Users\\juanm\\OneDrive\\Imágenes\\Saved Pictures\\Icons\\contratacion.png")); // NOI18N
+
+        jLabel42.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        jLabel42.setText("Solicitar Cita ");
+
+        jButton5.setBackground(new java.awt.Color(204, 3, 189));
+        jButton5.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Solicitar");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(597, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
 
         tab1.addTab("tab3", jPanel11);
@@ -562,30 +653,56 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(204, 255, 255));
         jPanel8.setToolTipText("");
 
-        jLabel32.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("Consultar Cita");
+        jLabel41.setIcon(new javax.swing.ImageIcon("C:\\Users\\juanm\\OneDrive\\Imágenes\\Saved Pictures\\Icons\\consulta.png")); // NOI18N
+
+        jLabel43.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        jLabel43.setText("Consultar Cita");
+
+        jButton6.setBackground(new java.awt.Color(204, 3, 189));
+        jButton6.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Consultar");
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(520, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(jLabel41)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(542, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel41))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(463, Short.MAX_VALUE))
         );
 
         tab1.addTab("tab4", jPanel8);
 
-        getContentPane().add(tab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 1050, 640));
+        getContentPane().add(tab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 1050, 670));
         tab1.getAccessibleContext().setAccessibleName("");
 
         pack();
@@ -683,6 +800,30 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
         this.setExtendedState(1);
     }//GEN-LAST:event_jLabel34MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RegistroInternalframe.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ConsultarPacienteInternalframe.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Registromedico.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Consultarmedico.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       solicitarcitas.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        consultarcitas.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -722,7 +863,12 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
     private javax.swing.JLabel Text1;
     private javax.swing.JLabel Text2;
     private javax.swing.JLabel Text3;
-    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -746,23 +892,24 @@ public class CitasMedicas_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
